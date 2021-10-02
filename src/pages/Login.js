@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -29,35 +29,41 @@ function Login() {
 
   return (
     <div className="login-holder">
-      <Form onSubmit={ console.log('ok') }>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={ formEmail }
-            onChange={ (e) => setFormEmail(e.target.value) }
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={ formPassword }
-            onChange={ (e) => setFormPassword(e.target.value) }
-          />
-        </Form.Group>
-        <Button
-          block
-          size="lg"
-          type="submit"
-          disabled={ !validateForm() }
-          onClick={ loginPage }
-        >
-          Login
-        </Button>
-      </Form>
-      <Link to="/carteira">teste</Link>
+      <div className="form-card">
+        <Form onSubmit={ console.log('ok') } className="form-control">
+          <Form.Group size="lg" controlId="email">
+            <Form.Control
+              data-testid="email-input"
+              autoFocus
+              type="email"
+              placeholder="E-mail"
+              className="input-control"
+              value={ formEmail }
+              onChange={ (e) => setFormEmail(e.target.value) }
+            />
+          </Form.Group>
+          <Form.Group size="lg" controlId="password">
+            <Form.Control
+              data-testid="password-input"
+              type="password"
+              placeholder="Senha"
+              className="input-control"
+              value={ formPassword }
+              onChange={ (e) => setFormPassword(e.target.value) }
+            />
+          </Form.Group>
+          <Button
+            block
+            size="lg"
+            type="submit"
+            className="buttom-control"
+            disabled={ !validateForm() }
+            onClick={ loginPage }
+          >
+            Entrar
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }

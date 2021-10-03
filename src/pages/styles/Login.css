@@ -1,0 +1,37 @@
+.login-holder {
+  width: 100%;
+  display:flex;
+}
+
+.form-control {
+  margin: 0 auto;
+}
+
+.form-card {
+  width: 450px;
+  margin: 150px auto;
+  background: #d1d1d1;
+  display: grid;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+}
+
+.input-control {
+  width: 425px;
+  height: 30px;
+  background: white;
+  padding: .3rem 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.buttom-control {
+  width: 100px;
+  height: 35px;
+}
